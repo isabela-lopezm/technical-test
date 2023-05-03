@@ -12,6 +12,4 @@
 		<servlet-name>Service</servlet-name>
 		<url-pattern>/service/*</url-pattern>
 	</servlet-mapping>
-	
-
 </web-app>
