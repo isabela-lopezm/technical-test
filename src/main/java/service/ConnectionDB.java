@@ -13,7 +13,7 @@ public class ConnectionDB {
 			this.connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/test_service", "root", "");
 			System.out.println("Conexión establecida correctamente");
 
-		}catch (Exception e) {
+		} catch (Exception e) {
 			System.out.println("Error en la conexión:");
 			e.printStackTrace();
 		}
