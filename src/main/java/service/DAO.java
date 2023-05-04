@@ -17,10 +17,14 @@ public class DAO {
 		String sql = "SELECT contracts.code, properties.address, CONCAT(people.name, ' ', people.last_name) AS full_name, "
 				+ "contracts_people.role FROM contracts_people "
 				+ "INNER JOIN people ON people.id = contracts_people.person_id "
-				+ "INNER JOIN contracts ON contracts.id =contracts_people.contract_id "
+				+ "INNER JOIN contracts ON contracts.id = contracts_people.contract_id "
 				+ "INNER JOIN properties ON properties.id = contracts.property_id "
+				+ "WHERE contracts.code IN ("
+				+ "SELECT contracts.code FROM contracts_people "
+				+ "INNER JOIN people ON people.id = contracts_people.person_id "
+				+ "INNER JOIN contracts ON contracts.id = contracts_people.contract_id "
 				+ "WHERE people.name LIKE ? OR people.last_name LIKE ? OR people.id_document LIKE ? "
-				+ "OR people.email LIKE ? OR properties.address LIKE ? OR contracts.code LIKE ?;";
+				+ "OR people.email LIKE ? OR properties.address LIKE ? OR contracts.code LIKE ?);";
 		try {
 			connect = connectDB.getConnection();
 			ps = connect.prepareStatement(sql);

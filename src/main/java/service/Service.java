@@ -21,6 +21,8 @@ public class Service extends HttpServlet {
 
 		Manager manager = new Manager();
 		JSONArray jsonContractData = manager.getJSONContractData(contractParam);
+		
+		System.out.println(jsonContractData.toString());
 
 		JSONObject jsonResponse = new JSONObject();
 		jsonResponse.put("contractData", jsonContractData);
