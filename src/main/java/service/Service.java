@@ -17,12 +17,9 @@ public class Service extends HttpServlet {
 		response.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
 		String contractParam = request.getParameter("contractParam");
-		System.out.println(contractParam);
 
 		Manager manager = new Manager();
 		JSONArray jsonContractData = manager.getJSONContractData(contractParam);
-		
-		System.out.println(jsonContractData.toString());
 
 		JSONObject jsonResponse = new JSONObject();
 		jsonResponse.put("contractData", jsonContractData);
