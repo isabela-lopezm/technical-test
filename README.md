@@ -21,7 +21,7 @@ Una vez realizada la consulta, se presentará en una tabla la siguiente informac
 5.	Desplegar la carpeta 	Tomcat y elegir la versión correspondiente (Tomcat v9.0 Server)
 6.	Añadir al servidor creado el proyecto “TechnicalTest”
 7.	Iniciar el servidor (dar click derecho sobre el servidor creado y presionar “Start”)
-8.	Abrir el archivo index.html, disponible en https://github.com/isabela-lopezm/technical-test-front/tree/master/html, en un navegador web
+8.	Descargar el proyecto disponible en https://github.com/isabela-lopezm/technical-test-front y abrir el archivo index.html en un navegador web.
 9.	Ingresar la información que se desea consultar
 
 
