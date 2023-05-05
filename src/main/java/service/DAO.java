@@ -11,6 +11,13 @@ public class DAO {
 	private Connection connect;
 	private ConnectionDB connectDB = new ConnectionDB();
 
+	/**
+	 * Execute the SQL statement to get contract information (contract code, address
+	 * and contract parts) of the contracts that match the given parameter
+	 * 
+	 * @param contractParam
+	 * @return ArrayList<String[]> with the contract(s) info found
+	 */
 	public ArrayList<String[]> getContractData(String contractParam) {
 		PreparedStatement ps;
 		ResultSet rs;
@@ -18,7 +25,7 @@ public class DAO {
 				+ "contracts_people.role FROM contracts_people "
 				+ "INNER JOIN people ON people.id = contracts_people.person_id "
 				+ "INNER JOIN contracts ON contracts.id = contracts_people.contract_id "
-				+ "INNER JOIN properties ON properties.id = contracts.property_id "
+				+ "INNER JOIN properties ON properties.id = contracts.property_id " 
 				+ "WHERE contracts.code IN ("
 				+ "SELECT contracts.code FROM contracts_people "
 				+ "INNER JOIN people ON people.id = contracts_people.person_id "

@@ -10,7 +10,14 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class Service extends HttpServlet {
-	
+
+	/**
+	 * Receives the HTTP get request and generates the response in JSON format
+	 * 
+	 * @param request
+	 * @param response
+	 * @throws IOException
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.addHeader("Access-Control-Allow-Origin", "*");
 		response.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
